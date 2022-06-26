@@ -4,11 +4,13 @@
 	"description": "QS - UI kit for websites",
 	"main": "index.js",
 	"scripts": {
-		"scss-watch": "sass --no-source-map --watch scss:css"
+		"scss-watch": "sass --no-source-map --watch scss:css",
+		"build-icons": "fantasticon icons -o fonts/icons --normalize true -p qs-icon"
 	},
 	"author": "Iancu George-Alexandru",
 	"license": "ISC",
 	"dependencies": {
+		"fantasticon": "^1.2.3",
 		"sass": "^1.53.0"
 	}
 }
