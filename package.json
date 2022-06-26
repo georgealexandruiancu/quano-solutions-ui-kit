@@ -1,0 +1,14 @@
+{
+	"name": "quano-solutions-ui-kit",
+	"version": "1.0.0",
+	"description": "QS - UI kit for websites",
+	"main": "index.js",
+	"scripts": {
+		"scss-watch": "sass --no-source-map --watch scss:css"
+	},
+	"author": "Iancu George-Alexandru",
+	"license": "ISC",
+	"dependencies": {
+		"sass": "^1.53.0"
+	}
+}

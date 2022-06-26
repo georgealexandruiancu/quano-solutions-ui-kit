@@ -1,0 +1,41 @@
+$inner-gutter:					20px;
+$inner-half-gutter:				calc($inner-gutter / 2);
+$inner-quarter-gutter:			calc($inner-gutter / 4);
+
+$font-size:						14px;
+$font-letter-spacing:			1;
+$font-family-text:				"Lato", sans-serif;
+$font-family-heading:			'Barlow Condensed', sans-serif;
+$font-family-elegant:			"Italiana", serif;
+
+$font-heading-multiplier-h1:	4;
+$font-heading-multiplier-h2:	3;
+$font-heading-multiplier-h3:	2.75;
+$font-heading-multiplier-h4:	2.1;
+$font-heading-multiplier-h5:	1.75;
+$font-heading-multiplier-h6:	1.2;
+
+$font-heading-declaration: (
+	(h1, $font-heading-multiplier-h1),
+	(h2, $font-heading-multiplier-h2),
+	(h3, $font-heading-multiplier-h3),
+	(h4, $font-heading-multiplier-h4),
+	(h5, $font-heading-multiplier-h5),
+	(h6, $font-heading-multiplier-h6),
+);
+
+$letter-spacing: (
+	h1: 0.5px,
+	h2: 0.6px,
+	h3: 0.7px,
+	h4: 0.8px,
+	h5: 1px,
+	h6: 1.1px,
+	p: 1px
+);
+
+$full:							100%;
+$half:							50%;
+$quarter:						25%;
+
+$container-size:				1200px;

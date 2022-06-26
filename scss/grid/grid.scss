@@ -1,0 +1,135 @@
+@import "../settings/variables";
+
+$qs-grid-columns:						12;
+$qs-grid-gutter:						$inner-gutter;
+$qs-grid-container-fluid-size:			$full;
+$qs-grid-container-size:				$container-size;
+$qs-grid-breakpoints: (
+	(all),
+	(xs),
+	(sm, 768px),
+	(md, 992px),
+	(lg, 1200px)
+);
+
+$qs-grid-row-class:				"qs-row";
+$qs-grid-col-class:				"qs-col";
+$qs-grid-off-class:				"qs-col-off";
+$qs-grid-container-class:		"qs-container";
+
+.#{ $qs-grid-container-class } {
+	box-sizing: border-box;
+	max-width: $qs-grid-container-size;
+	padding-right: $qs-grid-gutter;
+	padding-left: $qs-grid-gutter;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.#{ $qs-grid-container-class }--fluid {
+	box-sizing: border-box;
+	width: $qs-grid-container-fluid-size;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@function get-col-percent($column-number) {
+	@return calc($column-number / $qs-grid-columns) * 100%;
+}
+
+@mixin spacing($value, $type: margin, $orientation: vertical) {
+	@if $orientation == vertical {
+		#{ $type }-top: $value;
+		#{ $type }-bottom: $value;
+	}
+	@else {
+		#{ $type }-left: $value;
+		#{ $type }-right: $value;
+	}
+}
+
+.#{ $qs-grid-row-class } {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	@include spacing( ( -$qs-grid-gutter ), margin, horizontal );
+}
+
+%#{ $qs-grid-col-class } {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 0;
+	flex-shrink: 0;
+	min-height: 1px;
+	@include spacing( ( $qs-grid-gutter ), padding, horizontal );
+}
+
+%#{ $qs-grid-col-class }-flex {
+	@extend %#{ $qs-grid-col-class };
+	flex-grow: 1;
+	flex-basis: 0;
+	max-width: 100%;
+}
+
+
+@mixin grid-base( $namespace ) {
+	.#{ $qs-grid-col-class }-#{$namespace} {
+		@extend %#{ $qs-grid-col-class }-flex;
+	}
+
+	@for $i from 1 through $qs-grid-columns {
+		.#{ $qs-grid-col-class }-#{$namespace}-#{$i} {
+		@extend %#{ $qs-grid-col-class };
+		}
+	}
+}
+
+@mixin grid-sizes( $namespace ) {
+	@for $i from 1 through $qs-grid-columns{
+		.#{ $qs-grid-col-class  }-#{$namespace}-#{$i} {
+			flex-basis: get-col-percent($i);
+			max-width:  get-col-percent($i);
+		}
+	}
+
+	@for $i from 1 through $qs-grid-columns {
+
+		@if ( $i != $qs-grid-columns ) {
+			.#{ $qs-grid-off-class }-#{$namespace}-#{$i} {
+				margin-left: get-col-percent($i);
+			}
+		}
+
+	}
+
+	.#{ $qs-grid-off-class }-#{$namespace}-reset {
+		margin-left: 0;
+	}
+}
+
+@each $val in $qs-grid-breakpoints {
+
+  $namespace: nth($val, 1);
+  @include grid-base( $namespace );
+
+}
+
+@each $val in $qs-grid-breakpoints {
+	@if length($val) == 1 {
+
+		$namespace: nth($val, 1);
+		@include grid-sizes( $namespace );
+
+	}
+	@else {
+
+		$namespace: nth($val, 1);
+		$size: nth($val, 2);
+
+		@media only screen and (min-width: #{$size}) {
+			@include grid-sizes( $namespace );
+		}
+	}
+}

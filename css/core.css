@@ -1,0 +1,613 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300;400;600;700;800&family=Italiana&family=Lato:wght@100;300;400;700;900&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+
+ol,
+ul,
+li {
+  list-style: none;
+}
+
+input,
+select,
+textarea {
+  background-color: transparent;
+  outline: none;
+  border: 0;
+}
+
+:root {
+  --color-primary:	#154247;
+  --color-primary-dark-10:	#091d20;
+  --color-primary-dark-20:	#000;
+  --color-primary-dark-30:	#000;
+  --color-primary-dark-40:	#000;
+  --color-primary-dark-50:	#000;
+  --color-primary-dark-60:	#000;
+  --color-primary-light-10:	#21676e;
+  --color-primary-light-20:	#2c8b96;
+  --color-primary-light-30:	#38b0bd;
+  --color-primary-light-40:	#5ac3ce;
+  --color-primary-light-50:	#81d1da;
+  --color-primary-light-60:	#a9dfe5;
+  --color-secondary:	#585043;
+  --color-secondary-dark-10:	#3b362d;
+  --color-secondary-dark-20:	#1e1b17;
+  --color-secondary-dark-30:	#010101;
+  --color-secondary-dark-40:	#000;
+  --color-secondary-dark-50:	#000;
+  --color-secondary-dark-60:	#000;
+  --color-secondary-light-10:	#756a59;
+  --color-secondary-light-20:	#92856f;
+  --color-secondary-light-30:	#a89d8c;
+  --color-secondary-light-40:	#beb6a9;
+  --color-secondary-light-50:	#d4cfc6;
+  --color-secondary-light-60:	#eae7e3;
+  --color-ternary:	#CDBEAB;
+  --color-widget:	#979088;
+  --color-positive:	#F3ECE4;
+  --color-negative:	#000000;
+}
+
+h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.5px;
+  line-height: normal;
+}
+
+.qs-h1 {
+  font-size: 56px;
+}
+
+@media only screen and (min-width: 275px) {
+  h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.5px;
+    line-height: normal;
+  }
+  .qs-h1 {
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.5px;
+    line-height: normal;
+  }
+  .qs-h1 {
+    font-size: 41.4814814815px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.5px;
+    line-height: normal;
+  }
+  .qs-h1 {
+    font-size: 37.3333333333px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h1 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.5px;
+    line-height: normal;
+  }
+  .qs-h1 {
+    font-size: 56px;
+  }
+}
+.qs-h1--elegant {
+  font-family: "Italiana", serif;
+}
+
+.qs-h1--thin {
+  font-weight: 100;
+}
+
+.qs-h1--normal {
+  font-weight: 400;
+}
+
+.qs-h1--bold {
+  font-weight: 600;
+}
+
+.qs-h1--black {
+  font-weight: 900;
+}
+
+h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.6px;
+  line-height: normal;
+}
+
+.qs-h2 {
+  font-size: 42px;
+}
+
+@media only screen and (min-width: 275px) {
+  h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.6px;
+    line-height: normal;
+  }
+  .qs-h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.6px;
+    line-height: normal;
+  }
+  .qs-h2 {
+    font-size: 31.1111111111px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.6px;
+    line-height: normal;
+  }
+  .qs-h2 {
+    font-size: 28px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.6px;
+    line-height: normal;
+  }
+  .qs-h2 {
+    font-size: 42px;
+  }
+}
+.qs-h2--elegant {
+  font-family: "Italiana", serif;
+}
+
+.qs-h2--thin {
+  font-weight: 100;
+}
+
+.qs-h2--normal {
+  font-weight: 400;
+}
+
+.qs-h2--bold {
+  font-weight: 600;
+}
+
+.qs-h2--black {
+  font-weight: 900;
+}
+
+h3 {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.7px;
+  line-height: normal;
+}
+
+.qs-h3 {
+  font-size: 38.5px;
+}
+
+@media only screen and (min-width: 275px) {
+  h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.7px;
+    line-height: normal;
+  }
+  .qs-h3 {
+    font-size: 27.5px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.7px;
+    line-height: normal;
+  }
+  .qs-h3 {
+    font-size: 28.5185185185px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.7px;
+    line-height: normal;
+  }
+  .qs-h3 {
+    font-size: 25.6666666667px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h3 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.7px;
+    line-height: normal;
+  }
+  .qs-h3 {
+    font-size: 38.5px;
+  }
+}
+.qs-h3--elegant {
+  font-family: "Italiana", serif;
+}
+
+.qs-h3--thin {
+  font-weight: 100;
+}
+
+.qs-h3--normal {
+  font-weight: 400;
+}
+
+.qs-h3--bold {
+  font-weight: 600;
+}
+
+.qs-h3--black {
+  font-weight: 900;
+}
+
+h4 {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 0.8px;
+  line-height: normal;
+}
+
+.qs-h4 {
+  font-size: 29.4px;
+}
+
+@media only screen and (min-width: 275px) {
+  h4 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.8px;
+    line-height: normal;
+  }
+  .qs-h4 {
+    font-size: 21px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h4 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.8px;
+    line-height: normal;
+  }
+  .qs-h4 {
+    font-size: 21.7777777778px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h4 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.8px;
+    line-height: normal;
+  }
+  .qs-h4 {
+    font-size: 19.6px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h4 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 0.8px;
+    line-height: normal;
+  }
+  .qs-h4 {
+    font-size: 29.4px;
+  }
+}
+.qs-h4--elegant {
+  font-family: "Italiana", serif;
+}
+
+.qs-h4--thin {
+  font-weight: 100;
+}
+
+.qs-h4--normal {
+  font-weight: 400;
+}
+
+.qs-h4--bold {
+  font-weight: 600;
+}
+
+.qs-h4--black {
+  font-weight: 900;
+}
+
+h5 {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 1px;
+  line-height: normal;
+}
+
+.qs-h5 {
+  font-size: 24.5px;
+}
+
+@media only screen and (min-width: 275px) {
+  h5 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1px;
+    line-height: normal;
+  }
+  .qs-h5 {
+    font-size: 17.5px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h5 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1px;
+    line-height: normal;
+  }
+  .qs-h5 {
+    font-size: 18.1481481481px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h5 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1px;
+    line-height: normal;
+  }
+  .qs-h5 {
+    font-size: 16.3333333333px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h5 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1px;
+    line-height: normal;
+  }
+  .qs-h5 {
+    font-size: 24.5px;
+  }
+}
+.qs-h5--elegant {
+  font-family: "Italiana", serif;
+}
+
+.qs-h5--thin {
+  font-weight: 100;
+}
+
+.qs-h5--normal {
+  font-weight: 400;
+}
+
+.qs-h5--bold {
+  font-weight: 600;
+}
+
+.qs-h5--black {
+  font-weight: 900;
+}
+
+h6 {
+  font-family: "Barlow Condensed", sans-serif;
+  letter-spacing: 1.1px;
+  line-height: normal;
+}
+
+.qs-h6 {
+  font-size: 16.8px;
+}
+
+@media only screen and (min-width: 275px) {
+  h6 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.1px;
+    line-height: normal;
+  }
+  .qs-h6 {
+    font-size: 12px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  h6 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.1px;
+    line-height: normal;
+  }
+  .qs-h6 {
+    font-size: 12.4444444444px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  h6 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.1px;
+    line-height: normal;
+  }
+  .qs-h6 {
+    font-size: 11.2px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  h6 {
+    font-family: "Barlow Condensed", sans-serif;
+    letter-spacing: 1.1px;
+    line-height: normal;
+  }
+  .qs-h6 {
+    font-size: 16.8px;
+  }
+}
+.qs-h6--elegant {
+  font-family: "Italiana", serif;
+}
+
+.qs-h6--thin {
+  font-weight: 100;
+}
+
+.qs-h6--normal {
+  font-weight: 400;
+}
+
+.qs-h6--bold {
+  font-weight: 600;
+}
+
+.qs-h6--black {
+  font-weight: 900;
+}
+
+p {
+  letter-spacing: 1px;
+  line-height: normal;
+}

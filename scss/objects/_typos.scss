@@ -1,0 +1,80 @@
+@import "../settings/variables";
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300;400;600;700;800&family=Italiana&family=Lato:wght@100;300;400;700;900&display=swap');
+$qs-typo-prefix:		"qs";
+$qs-typo:				"qs-typo";
+$qs-typo-breakpoints: (
+	(all, all),
+	(1.4, 275px),
+	(1.35, 768px),
+	(1.5, 992px),
+	(1, 1200px)
+);
+
+@function get-font-size($font-size, $multiplier, $division) {
+	@return calc($font-size * $multiplier / $division);
+}
+
+@function get-letter-spacing($namespace) {
+	$current-letter-spacing-multiplier: map-get($letter-spacing, $namespace);
+	@return calc($font-letter-spacing * $current-letter-spacing-multiplier);
+}
+
+@mixin qs-typos ($namespace, $multiplier, $division) {
+	#{ $namespace } {
+		font-family: $font-family-heading;
+		letter-spacing: get-letter-spacing($namespace);
+		line-height: normal;
+	}
+
+	.#{ $qs-typo-prefix }-#{ $namespace } {
+		font-size: get-font-size($font-size, $multiplier, $division);
+	}
+}
+
+@each $val in $font-heading-declaration {
+	$namespace: nth($val, 1);
+	$multiplier: nth($val, 2);
+
+	@each $valBreakpoint in $qs-typo-breakpoints {
+		$division: nth($valBreakpoint, 1);
+		$size: nth($valBreakpoint, 2);
+
+		@if ($division == all) {
+			@include qs-typos($namespace, $multiplier, 1);
+		}
+		@else {
+			$division: nth($valBreakpoint, 1);
+			$size: nth($valBreakpoint, 2);
+
+			@media only screen and (min-width: #{$size}) {
+				@include qs-typos($namespace, $multiplier, $division);
+			}
+		}
+	}
+
+	.#{ $qs-typo-prefix }-#{ $namespace }--elegant {
+		font-family: $font-family-elegant;
+	}
+
+	.#{ $qs-typo-prefix }-#{ $namespace }--thin {
+		font-weight: 100;
+	}
+
+	.#{ $qs-typo-prefix }-#{ $namespace }--normal {
+		font-weight: 400;
+	}
+
+	.#{ $qs-typo-prefix }-#{ $namespace }--bold {
+		font-weight: 600;
+	}
+
+	.#{ $qs-typo-prefix }-#{ $namespace }--black {
+		font-weight: 900;
+	}
+}
+
+p {
+	letter-spacing: get-letter-spacing(p);
+	line-height: normal;
+}
